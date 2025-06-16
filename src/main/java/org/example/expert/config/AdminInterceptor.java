@@ -15,7 +15,7 @@ public class AdminInterceptor implements HandlerInterceptor {
 
        UserRole userRole = UserRole.of((String) request.getAttribute("userRole")) ;
 
-        // 관리자 권한이 없는 경우
+        // 관리자 권한이 없는 경우 추가
         if (!UserRole.ADMIN.equals(userRole)) {
             response.sendError(HttpServletResponse.SC_FORBIDDEN, "관리자 권한이 없습니다.");
             return false;
