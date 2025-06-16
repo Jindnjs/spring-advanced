@@ -28,7 +28,7 @@ public class AdminAop {
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
                 .getRequestAttributes()).getRequest();
-
+        test
         String requestURI = request.getRequestURI();
         Long requestUserId = (Long) request.getAttribute("userId");
         String requestBody = objectMapper.writeValueAsString(joinPoint.getArgs());
